@@ -6,14 +6,13 @@ import 'package:flutter/material.dart';
 class PlanCard extends StatelessWidget {
 
   final String title;
-  const PlanCard({Key? key, required this.title}):super(key:key);
+  final VoidCallback onPressed;
+  const PlanCard({Key? key, required this.title, required this.onPressed}):super(key:key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (_) => Tabs()));
-      },
+      onTap: onPressed,
       child: Container(
                         padding: const EdgeInsets.all(25.0),
                         height: 220,

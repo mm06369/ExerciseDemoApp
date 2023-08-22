@@ -1,5 +1,6 @@
 
 
+import 'package:fitness_app_ui/pages/exercises/choose_exercise.dart';
 import 'package:fitness_app_ui/pages/schedule_page.dart';
 import 'package:fitness_app_ui/pages/user_profile_option.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,11 @@ class Programs extends StatelessWidget {
                     },
                     child: UserPhoto()),
                 ),
-                MainCardPrograms(), // MainCard
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => ChooseExercise()));
+                  },
+                  child: MainCardPrograms()), // MainCard
                 Section(
                   title: 'Fat burning',
                   horizontalList: generateList(context),

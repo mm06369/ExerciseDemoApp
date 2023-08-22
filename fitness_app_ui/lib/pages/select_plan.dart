@@ -4,6 +4,8 @@
 import 'package:fitness_app_ui/components/plan_card.dart';
 import 'package:flutter/material.dart';
 
+import '../tabs/tabs.dart';
+
 class SelectPlan extends StatelessWidget {
   const SelectPlan({Key? key}):super(key: key);
 
@@ -25,9 +27,15 @@ class SelectPlan extends StatelessWidget {
                       ),
                       ),
                       const SizedBox(height: 50,),
-                      const PlanCard(title: "Basic Plan"),
-                      const PlanCard(title: "Standard Plan"),
-                      const PlanCard(title: "Premium Plan"),
+                      PlanCard(title: "Basic Plan", onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => Tabs()));
+                      },),
+                      PlanCard(title: "Standard Plan", onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => Tabs()));
+                      },),
+                      PlanCard(title: "Premium Plan", onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => Tabs()));
+                      },),
                       
               ],
             ),
